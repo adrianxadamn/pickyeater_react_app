@@ -1,0 +1,22 @@
+.navigation {
+	background-color: #00796b;
+}
+
+.navigation__list {
+	display: flex;
+	margin: 0;
+	list-style: none;
+}
+
+
+.navigation__link {
+	color: #ffffff;
+	padding: 23px 15px;
+  display: block;
+  text-decoration: none;
+  transition: 0.3s ease-in-out background-color;
+}
+
+.navigation__link:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
