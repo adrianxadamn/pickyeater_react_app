@@ -17,7 +17,7 @@ function App() {
 				<Header />
 		    <Switch>
 		      <Route path="/my-lists" component={MyList} />
-		      <Route path="/home" component={Homepage} />
+		      <Route path="/" component={Homepage} />
 		    </Switch>
 		  </BrowserRouter>
 		</div>
