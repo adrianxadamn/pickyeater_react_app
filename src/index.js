@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import './styles/index.css';
-import './styles/box-sizing.css';
-import './styles/normalize.css';
-import './styles/reset.css';
+import './styles/index.scss';
+import './styles/box-sizing.scss';
+import './styles/normalize.scss';
+import './styles/reset.scss';
 import Header from './scripts/components/Header';
 import Homepage from './scripts/pages/homepage';
 import MyList from './scripts/pages/my-list';
