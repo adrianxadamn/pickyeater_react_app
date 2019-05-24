@@ -3,6 +3,16 @@ import axios from 'axios';
 import Restaurant from './../components/Restaurant';
 import '../../styles/pages/restaurants.scss';
 
+const config = {
+	headers: {
+		'Authorization': `Bearer ${process.env.REACT_APP_YELP_API_KEY}`
+	},
+	params: {
+		term: 'tacos',
+		location: 'main 123st'
+	}
+};
+
 class Restaurants extends Component {
 
 	state = {
@@ -10,17 +20,21 @@ class Restaurants extends Component {
 	}
 
 	componentDidMount() {
-		axios.get('https://jsonplaceholder.typicode.com/posts')
+		// axios.get('https://api.yelp.com/v3/businesses/search', config)
+
+		// https://cors-anywhere.herokuapp.com/ is a url we can use to bypass CORS when making api calls
+		axios.get('https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search', config)
 			.then((res) => {
-				const restarurants = res.data.slice(0, 9);
-				this.setState({ restaurants: restarurants });
+				const businesses = res.data.businesses;
+				console.log(businesses);
+				this.setState({ restaurants: businesses.slice(0, 9) });
 			});
 	}
 
 	render() {
 
 		const restaurants = this.state.restaurants.map(restaurant => {
-			return <Restaurant title={restaurant.title} body={restaurant.body} />
+			return <Restaurant title={restaurant.name} body={restaurant.rating} key={restaurant.id} />
 		});
 
 		return (

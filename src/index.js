@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import dotenv from 'dotenv/config';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './styles/index.scss';
-// import './styles/box-sizing.scss';
-// import './styles/normalize.scss';
-// import './styles/reset.scss';
 import Header from './scripts/components/Header';
 import Homepage from './scripts/pages/homepage';
 import MyList from './scripts/pages/my-list';
