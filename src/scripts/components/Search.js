@@ -9,7 +9,8 @@ class Search extends Component {
 		this.sendData = this.sendData.bind(this);
 		this.state = {
 			term: '',
-			location: ''
+			location: '',
+			radius: 1609 // default value
 		}
 	};
 
@@ -21,7 +22,8 @@ class Search extends Component {
 			},
 			params: {
 				term: this.state.term,
-				location: this.state.location
+				location: this.state.location,
+				radius: this.state.radius
 			}
 		};
 		console.log(config.params);
@@ -52,6 +54,11 @@ class Search extends Component {
 			 		<label>Location</label>
 			 		<input onChange={this.handleChange} type="text" name="location" placeholder="address, neighbordhood, city, state or zip" required/>
 				</div>
+				<select onChange={this.handleChange} className="input-select" name="radius">
+					<option value="1609">1 mile</option>
+					<option value="3219">2 miles</option>
+					<option value="8047">5 miles</option>
+				</select>
 				<button type="submit">Search</button>
 			</form>
 		);
