@@ -10,6 +10,7 @@ import Restaurants from './scripts/pages/restaurants';
 import * as serviceWorker from './serviceWorker';
 
 function App() {
+
 	return (
 		<div className="App">
 		  <BrowserRouter>
